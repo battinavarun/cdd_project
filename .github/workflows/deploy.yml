@@ -13,14 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-
-      - name: Build static files (if needed)
-        run: |
-          echo "No build step for plain HTML/CSS"
+      # (Optional) Run tests or build site here
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -28,3 +21,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
           publish_branch: gh-pages
+
+      - name: Upload report.html as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: report
+          path: report.html
