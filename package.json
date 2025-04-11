@@ -16,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "bdd": "cucumber-js",
+    "bdd": "cucumber-js --format html:report.html"
   },
   "eslintConfig": {
     "extends": [
@@ -35,5 +37,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@cucumber/html-formatter": "^21.10.0",
+    "jest": "^29.7.0",
+    "jest-cucumber": "^4.5.0"
   }
 }
