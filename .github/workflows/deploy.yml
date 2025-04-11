@@ -1,4 +1,4 @@
-name: Deploy Portfolio to GitHub Pages
+name: Deploy Portfolio and Upload Report
 
 on:
   push:
@@ -13,7 +13,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # (Optional) Run tests or build site here
+      # Optional: Add a build or test step here if needed
+
+      - name: List files for debugging
+        run: ls -R
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -23,7 +26,7 @@ jobs:
           publish_branch: gh-pages
 
       - name: Upload report.html as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.3
         with:
           name: report
           path: report.html
